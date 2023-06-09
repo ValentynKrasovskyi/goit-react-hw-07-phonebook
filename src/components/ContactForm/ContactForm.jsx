@@ -28,10 +28,12 @@ export const ContactForm = () => {
     if (contactsLists.findIndex(contact => name === contact.name) !== -1) {
       alert(`${name} is already in contacts.`);
     } else {
-      dispatch(addContact({ name: name, phone: number }));
+      dispatch(addContact({ name, number }));
     }
 
     form.reset();
+    setName('');
+    setNumber('');
   };
 
   return (
